@@ -9,7 +9,6 @@ describe("Car can", function() {
       tankGal: 3,
       addGas: function(n){
         this.tankGal += n
-
       }
     };
 
