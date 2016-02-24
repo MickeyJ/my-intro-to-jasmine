@@ -1,12 +1,16 @@
 var miles = require('../lib/miles.js');
 
-describe("Miles", function() {
+describe("Car can", function() {
 
-  it('is true', function() {
+  it('go the distance', function() {
 
     var car = {
       milesPG: 20,
-      tankGal: 3
+      tankGal: 3,
+      addGas: function(n){
+        this.tankGal += n
+
+      }
     };
 
     var route = {
@@ -15,7 +19,13 @@ describe("Miles", function() {
       location: 'Fancy Land'
     };
 
-    expect(miles.hasEnoughGas(car, route)).toEqual(false)
+    expect(miles.hasEnoughGas(car, route)).toEqual(false);
+
+    car.addGas(20);
+
+    expect(miles.hasEnoughGas(car, route)).toEqual(true);
+
+
   });
 
 });
