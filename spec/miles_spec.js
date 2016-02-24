@@ -1,10 +1,21 @@
-var code = require('../lib/miles.js');
+var miles = require('../lib/miles.js');
 
 describe("Miles", function() {
 
   it('is true', function() {
 
-    expect(code.hi(1,2)).toEqual(3)
+    var car = {
+      milesPG: 20,
+      tankGal: 3
+    };
+
+    var route = {
+      miles: 200,
+      destination: 'Boulder',
+      location: 'Fancy Land'
+    };
+
+    expect(miles.hasEnoughGas(car, route)).toEqual(false)
   });
 
 });
